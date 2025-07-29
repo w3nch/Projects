@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>React Simulation</title>
+</head>
+<body>
+  <button id="btn">Click Me</button>
+
+  <script>
+    class React {
+      constructor() {
+        this.library = 'React';
+        this.server = 'http://localhost:3000';
+        this.version = '17.0.2';
+
+        document.querySelector('#btn').addEventListener('click', this.handleClick.bind(this));
+      }
+
+      handleClick() {
+        console.log(`Button clicked! Library: ${this.library}, Server: ${this.server}, Version: ${this.version}`);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const react = new React();
+      console.log(react); // Should log the object on load
+    });
+  </script>
+</body>
+</html>
